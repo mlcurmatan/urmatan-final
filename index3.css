@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c0bcbc;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    padding: 1.5rem 10%;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+
+.back-link {
+    text-decoration: none;
+    color: #5b8fb9;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.portfolio-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero-card {
+    background: white;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 15px;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 2rem;
+}
+
+.profile-rect {
+    width: 150px;
+    height: 150px;
+    background: white; 
+    border-style: solid;
+    border-color: #5b8fb9;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.hero-text h2 { font-size: 2.2rem; color: #222; }
+.tagline { color: #888; margin: 0.5rem 0 1.5rem 0; font-size: 1.1rem; }
+
+.download-btn {
+    background: #444;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Layout Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #5b8fb9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Experience Styling */
+.timeline-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid #90d0fd;
+}
+
+.timeline-item h4 { font-size: 1.1rem; color: #222; }
+.date { font-size: 0.85rem; color: #999; margin-bottom: 0.5rem; }
+
+/* Research & Sidebar */
+.research-list { list-style: none; }
+.research-list li { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #fafafa; }
+
+.academic p { margin-bottom: 1rem; font-size: 0.95rem; }
+hr { border: 0; border-top: 1px solid #eee; margin: 1rem 0; }
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #bbb;
+    font-size: 0.8rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-card { flex-direction: column; text-align: center; padding: 2rem; }
+    .content-grid { grid-template-columns: 1fr; }
+}
+/* --- Back to Top Button --- */
+#backToTop {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #444; /* Dark for readability */
+    color: white;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Circular */
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #222;
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* --- Portfolio Explorer (Iframe Tabs) --- */
+.portfolio-explorer {
+    margin-top: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 400px; /* Fixed height to prevent page stretching */
+}
+
+.explorer-tabs {
+    display: flex;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+}
+
+.exp-tab {
+    flex: 1;
+    padding: 12px 5px;
+    border: none;
+    background: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-right: 1px solid #f0f0f0;
+    transition: 0.2s;
+}
+
+.exp-tab:hover {
+    background: #f0f7ff;
+}
+
+.exp-tab.active {
+    background: #fff;
+    color: #5b8fb9; 
+    border-bottom: 2px solid #5b8fb9;
+}
+
+
+
+#explorer-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    /* Standard way to hide scrollbars in Firefox */
+    scrollbar-width: none; 
+}
+
+/* Specific for Chrome, Safari, and Edge */
+#explorer-iframe::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+/* --- Custom Thin Scrollbar for Iframe Container --- */
+.explorer-iframe-container {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto; /* Allow vertical scrolling */
+    
+    /* Firefox Support */
+    scrollbar-width: thin;
+    scrollbar-color: #dcedc1 #f0f0f0; /* Handle color | Track color */
+}
+
+/* Webkit (Chrome, Safari, Edge) Support */
+#explorer-iframe::-webkit-scrollbar {
+    width: 6px; /* Makes it thin */
+}
+
+#explorer-iframe::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+#explorer-iframe::-webkit-scrollbar-thumb {
+    background: #5b8fb9; /* Casey's accent blue */
+    border-radius: 10px;
+}
+
+#explorer-iframe::-webkit-scrollbar-thumb:hover {
+    background: #4a7c59; /* Changes to a spring green on hover */
+}
+
+/* --- Hamburger & Overlay Styles --- */
+.hamburger {
+    cursor: pointer;
+    padding: 5px;
+    z-index: 500;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #333; /* Dark for readability */
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    overflow-x: hidden;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-content {
+    text-align: center;
+    width: 100%;
+}
+
+.overlay-content a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+.overlay-content a:hover {
+    color: #5b8fb9; /* Casey's accent blue */
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 40px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Adjust Header Nav to accommodate hamburger */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- Mail To Card Styling --- */
+.card.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card.contact p {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.mail-link {
+    display: inline-block;
+    background-color: #f0f7ff; /* Very pale pastel blue */
+    color: #5b8fb9; /* Casey's accent blue */
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid #e3f2fd;
+    transition: all 0.3s ease;
+}
+
+.mail-link:hover {
+    background-color: #5b8fb9;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(91, 143, 185, 0.2);
+}
+
+.mail-link .icon {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.social-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}

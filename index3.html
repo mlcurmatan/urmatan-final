@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Larry Urmatan</title>
+    <link rel="stylesheet" href="index3.css">
+</head>
+<body>
+
+<div id="navMenu" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+    <div class="overlay-content">
+        <a href="index3.html">Main Page</a>
+        <a href="index3.html#p1">Person 1</a>
+        <a href="index3.html#p2">Person 2</a>
+        <a href="#" onclick="toggleMenu()">Person 3 (Home)</a>
+        <a href="index3.html#invite">Invitation</a>
+    </div>
+</div>
+
+<header>
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+                    <div>
+                <h2>Larry Urmatan</h2>
+                <h6>Consultant | Debugger | System Designer</h6>
+            </div>
+    </nav>
+</header>
+
+    <main class="portfolio-container">
+        
+        <section class="hero-card">
+            <div><img src="image.png" class="profile-rect"></div>
+            <div class="hero-text">
+                <h2>Larry Urmatan</h2>
+                <p class="tagline">Consultant | Debugger | System Designer</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <div>
+                <h3>Academic Biography</h3>
+                <p class="justify">Larry Urmatan is a Computer Engineering student at the Technological Institute of the Philippines (Manila) and a former student of Mapúa University (Intramuros). He specializes in the field of mechatronics with robotics, and railway engineering. For over a decade, his primary research focus has been the development of sensors, feedback systems, and electronic instrumentation designed to evaluate atmospheric and weather phenomena. Beyond his technical pursuits, Larry is a dedicated student leader and educator, having served as a District Information and Liaison Committee Chairperson and as a facilitator for various technical seminars and collaborative research initiatives.</p>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <section class="card">
+                    <h3>Job Experience</h3>
+                    <div class="timeline-item">
+                        <h4>Independent Contractor</h4>
+                        <p class="date">2024 — Present | Developed Methods LLC </p>
+                        <p>Bug hunting, feature integration, and issue resolution.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>System Developer</h4>
+                        <p class="date">2017-2018 | Miranda BPO</p>
+                        <p>Developed both client facing and internal systems.</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h3>Research & Publications</h3>
+                    <ul class="research-list">
+                        <li><strong>"Weather Conditions of the Northern Part of Imus Cavite"</strong><br> - Imus Institute 2012</li>
+                        <li><strong>"Rapid Relay: A Direct Sensor-based Flood Monitoring for Early Detection and Rapid Multi-channel Dissemination"</strong><br> - Technological Institute of the Philippines, Ongoing.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <section class="card academic">
+                    <h3>Academic History</h3>
+                    <p><strong>Computer Engineering Specialized in Robotics with Mechatronics</strong><br>Mapua Institute of Technology 2012-2019</p>
+                    <hr>
+                    <p><strong>Computer Engineering Specialized in Railway Engineering</strong><br>Technological Institute of the Philippines 2019-Present</p>
+                </section>
+
+
+
+<section class="card contact">
+    <h3>Contact</h3>
+    <p>Reach out for collaborations or inquiries:</p>
+    
+    <a href="mailto:mlcurmatan@tip.edu.ph?subject=Inquiry%20from%20Portfolio" class="mail-link">
+        <span class="icon">✉</span> mlcurmatan@tip.edu.ph
+    </a>
+</section>
+
+
+            </aside>
+        </div>
+        <section class="portfolio-explorer">
+                <div>
+                <h3>&nbsp;Sample Projects</h3>
+            </div>
+    <div class="explorer-tabs">
+        <button class="exp-tab active" onclick="loadTab(this, 'https://mlcurmatan.github.io/frontend-lab/')">LA 1</button>
+        <button class="exp-tab" onclick="loadTab(this, 'https://mlcurmatan.github.io/Project-Gatekeeper/')">LA 3.2</button>
+        <button class="exp-tab" onclick="loadTab(this, 'https://ubiquitous-pika-6a656f.netlify.app/')">LA 3.3</button>
+        <button class="exp-tab" onclick="loadTab(this, 'https://crypto-pulse-xi-ten.vercel.app/')">LA 4</button>
+    </div>
+    <div class="explorer-iframe-container">
+        <iframe id="explorer-iframe" src="https://mlcurmatan.github.io/frontend-lab/" frameborder="0"></iframe>
+    </div>
+</section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Larry Urmatan.</p>
+    </footer>
+<button id="backToTop" onclick="scrollToTop()" title="Go to top">↑</button>
+
+<script src="index3.js"></script>
+</body>
+</html>
